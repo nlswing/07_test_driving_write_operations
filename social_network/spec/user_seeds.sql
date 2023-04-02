@@ -1,4 +1,4 @@
-TRUNCATE TABLE users RESTART IDENTITY; 
+TRUNCATE TABLE users RESTART IDENTITY CASCADE; 
 
 
 INSERT INTO users (name, email) VALUES ('John Lennon', 'jl@beatles.com');
