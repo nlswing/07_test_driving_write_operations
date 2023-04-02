@@ -45,6 +45,15 @@ class UserRepository
     return nil
   end
 
+  def delete(id)
+    sql = 'DELETE FROM users WHERE id = $1;'
+    sql_params = [id]
+    DatabaseConnection.exec_params(sql, sql_params)
+
+    return nil
+  end
+
+
 end
 
 

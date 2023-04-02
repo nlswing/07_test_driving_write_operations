@@ -50,6 +50,22 @@ RSpec.describe UserRepository do
     expect(last_user.name).to eq 'Billy Joel'
     expect(last_user.email).to eq 'bj@beatles.com'
   end 
+
+  it 'deletes a user' do
+  repo = UserRepository.new
+
+  user_to_delete = 1
+  
+  repo.delete(user_to_delete)
+  
+  all_users = repo.all
+  expect(all_users.length).to eq 1
+  expect(all_users.first.id).to eq 2
+
+  end
+
+
+  
 end
 
     
