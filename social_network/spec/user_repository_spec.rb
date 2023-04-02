@@ -35,6 +35,21 @@ RSpec.describe UserRepository do
     expect(user.email).to eq 'pm@beatles.com'
     
   end
+
+  it 'returs a new user' do
+    repo = UserRepository.new
+    new_user = User.new
+    new_user.name = 'Billy Joel'
+    new_user.email = 'bj@beatles.com'
+
+    repo.create(new_user)
+
+    users = repo.all
+    last_user = users.last 
+
+    expect(last_user.name).to eq 'Billy Joel'
+    expect(last_user.email).to eq 'bj@beatles.com'
+  end 
 end
 
     
