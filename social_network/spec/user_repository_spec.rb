@@ -24,6 +24,17 @@ RSpec.describe UserRepository do
     expect(users[0].name).to eq 'John Lennon'
     expect(users[0].email).to eq 'jl@beatles.com'
   end
+
+  it 'returns a user details' do
+    repo = UserRepository.new
+
+    user = repo.find(2)
+
+    expect(user.id).to eq 2
+    expect(user.name).to eq 'Paul McCartney'
+    expect(user.email).to eq 'pm@beatles.com'
+    
+  end
 end
 
     
